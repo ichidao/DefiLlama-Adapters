@@ -45,6 +45,8 @@
   },
   "description": "",
   "devDependencies": {
-    "ts-node": "^10.8.1"
+    "@typechain/ethers-v5": "^10.1.0",
+    "ts-node": "^10.8.1",
+    "typechain": "^8.1.0"
   }
 }

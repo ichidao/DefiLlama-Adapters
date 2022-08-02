@@ -6,6 +6,7 @@ const abi = require("./abi.json");
 const { requery } = require('./../helper/getUsdUniTvl');
 
 const ichi = "0x903bEF1736CDdf2A537176cf3C64579C3867A881";
+const ichi_v2 = "0x111111517e4929D3dcbdfa7CCe55d30d4B6BC4d6";
 const xIchi = "0x70605a6457B0A8fBf1EEE896911895296eAB467E";
 const tokenFactory = "0xD0092632B9Ac5A7856664eeC1abb6E3403a6A36a";
 const farmContract = "0x275dFE03bc036257Cd0a713EE819Dbd4529739c8";
@@ -28,35 +29,19 @@ const poolWithTokens = [
 ]
 
 const lendingPools = [
-  { 
-    target: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-    params: ["0x5933f2109652c019ceab70dabf4bc9e0e29873f5"]
-  },
-  { // oneUNI
+  { // Uni - oneUNI || Minting oneToken with Uni
     target: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
     params: ["0x8290D7a64F25e6b5002d98367E8367c1b532b534"]
   },
-  { // oneUNI
+  { // USDC - oneUNI || Minting oneToken with USDC 
     target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
     params: ["0x8290D7a64F25e6b5002d98367E8367c1b532b534"]
   },
-  // { // xICHI
-  //   target: "0x70605a6457B0A8fBf1EEE896911895296eAB467E",
-  //   params: ["0xb7abc13db4aeaea90a17ae46291317ef8554f076"]
-  // },
-  { 
-    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    params: ["0xece2c0aa6291e3f1222b6f056596dfe0e81039b9"]
-  },
-  // { // ichiVault == oneUNI
-  //   target: "0xfaeCcee632912c42a7c88c3544885A8D455408FA",
-  //   params: ["0x78dcc36dc532b0def7b53a56a91610c44dd09444"]
-  // }
-  { // oneFOX
+  { // oneFox
     target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
     params: ["0x03352D267951E96c6F7235037C5DFD2AB1466232"]
   },
-  { // oneFOX
+  { // oneFox
     target: "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
     params: ["0x03352D267951E96c6F7235037C5DFD2AB1466232"]
   },
