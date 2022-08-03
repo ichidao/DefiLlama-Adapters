@@ -22,6 +22,8 @@ const unilps = [
 const poolWithTokens = [
   // BANCOR
   ["0x4a2F0Ca5E03B2cF81AebD936328CF2085037b63B", ["0x903bEF1736CDdf2A537176cf3C64579C3867A881", "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C"]],
+  // BANCOR V3
+  ["0x36FAbE4cAeF8c190550b6f93c306A5644E7dCef6", ["0x903bEF1736CDdf2A537176cf3C64579C3867A881", "0x1F573D6Fb3F13d689FF844B4cE37794d79a7FF1C"]],
   // ONE INCH
   ["0x1dcE26F543E591c27717e25294AEbbF59AD9f3a5", ["0x903bEF1736CDdf2A537176cf3C64579C3867A881", "0x111111111117dC0aa78b770fA6A738034120C302"]],
   // BALANCER
@@ -44,14 +46,6 @@ const lendingPools = [
   { // oneFox
     target: "0xc770EEfAd204B5180dF6a14Ee197D99d808ee52d",
     params: ["0x03352D267951E96c6F7235037C5DFD2AB1466232"]
-  },
-  { // oneBTC
-    target: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
-    params: ["0xEc4325F0518584F0774b483c215F65474EAbD27F"]
-  },
-  {  // oneBTC
-    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-    params: ["0xEc4325F0518584F0774b483c215F65474EAbD27F"]
   },
   { // oneFUSE
     target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
@@ -94,7 +88,44 @@ const lendingPools = [
     target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
     params: ["0xBE3F88E18BE3944FdDa830695228ADBB82fA125F"]
   },
+  { // oneICHI
+    target: "0x903bEF1736CDdf2A537176cf3C64579C3867A881",
+    params: ["0x4db2c02831c9ac305FF9311Eb661f80f1dF61e07"]
+  },
+  {  // oneICHI
+    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    params: ["0x4db2c02831c9ac305FF9311Eb661f80f1dF61e07"]
+  },
+  { // oneGIV
+    target: "0x900dB999074d9277c5DA2A43F252D74366230DA0",
+    params: ["0x17e6BA2519B4d15199B6529dB340910Ae031b1B0"]
+  },
+  {  // oneGIV - Used DAI not USDC
+    target: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    params: ["0x17e6BA2519B4d15199B6529dB340910Ae031b1B0"]
+  },
+  { // oneOJA
+    target: "0x0aA7eFE4945Db24d95cA6E117BBa65Ed326e291A",
+    params: ["0xbB9E5DB6F357BB4dF35E8B90B37b8A3F33031D86"]
+  },
+  {  // oneOJA
+    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    params: ["0xbB9E5DB6F357BB4dF35E8B90B37b8A3F33031D86"]
+  },
+  { // oneWING
+    target: "0xDb0f18081b505A7DE20B18ac41856BCB4Ba86A1a",
+    params: ["0x5047fc5C9D7c49Ab22e390d13646a6A3a2476eff"]
+  },
+  {  // oneWING
+    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    params: ["0x5047fc5C9D7c49Ab22e390d13646a6A3a2476eff"]
+  },
+  {  // BootUSD – Takes only USDC 
+    target: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    params: ["0x78a3B2f1e7eec1073088ea4a193618743F81cEf8"]
+  },
 ]
+
 
 async function getVaultTvl(balances, vaults, tokenAtIndex, block) {
   let allOneTokens = []
@@ -324,6 +355,6 @@ module.exports = {
   ethereum: {
     tvl,
     pool2,
-    staking: stakings([xIchi, ichiLending] , ichi)
+    staking: stakings([xIchi, ichiLending] , ichi_v2)
   }
 } // node test.js projects/ichifarm/index.js
